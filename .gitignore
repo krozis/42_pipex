@@ -1,0 +1,8 @@
+obj/
+libft/obj/
+libft/libft.a
+pipex
+infile
+outfile
+test*
+.vscode/
