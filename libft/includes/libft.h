@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stelie <stelie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: krozis <krozis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 15:45:08 by stelie            #+#    #+#             */
-/*   Updated: 2022/05/17 18:50:59 by stelie           ###   ########.fr       */
+/*   Updated: 2022/06/14 18:49:57 by krozis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <fcntl.h>
+
+# define ERR_ARGS "Problem with the number of arguments"
 
 # define ERROR -1
 # define TYPESET "csiduxXp"
@@ -182,5 +184,9 @@ int				pf_ptr(uintptr_t addr, t_fid *fid);
 09_gnl
 */
 char			*get_next_line(int fd);
+
+/*
+10_files
+*/
 
 #endif

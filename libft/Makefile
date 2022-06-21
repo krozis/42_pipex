@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: stelie <stelie@student.42.fr>              +#+  +:+       +#+         #
+#    By: krozis <krozis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/19 20:20:34 by stelie            #+#    #+#              #
-#    Updated: 2022/05/27 10:33:45 by stelie           ###   ########.fr        #
+#    Updated: 2022/06/14 18:49:14 by krozis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SUB_DIRS	=	$(O_DIR)/00_is_something\
 				$(O_DIR)/07_chained_lists\
 				$(O_DIR)/08_ft_printf\
 				$(O_DIR)/09_gnl\
+				$(O_DIR)/10_files\
 
 #Source files
 SRCS		=	00_is_something/00_00.c\
