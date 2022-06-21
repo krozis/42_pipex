@@ -10,7 +10,7 @@ MK			=	make -s -C
 
 #Compilation flags
 INCLUDES	=	-I$(H_DIR) -I$(LFT_DIR)includes
-FLAGS		=	$(WFLAGS) #) $(MEM_FLAGS)
+FLAGS		=	$(WFLAGS) $(MEM_FLAGS)
 WFLAGS		=	-Wall -Werror -Wextra
 MEM_FLAGS	=	-g3 -fsanitize=address
 
@@ -26,6 +26,9 @@ LFT			=	$(LFT_DIR)libft.a
 
 #Source files
 SRC_FILES	=	pipex.c\
+				px_init.c\
+				px_exit.c\
+				px_env.c\
 
 OBJ_FILES	=	$(SRC_FILES:.c=.o)
 
