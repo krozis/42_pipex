@@ -10,7 +10,7 @@ MK			=	make -s -C
 
 #Compilation flags
 INCLUDES	=	-I$(H_DIR) -I$(LFT_DIR)includes
-FLAGS		=	$(WFLAGS) $(MEM_FLAGS)
+FLAGS		=	$(WFLAGS) #$(MEM_FLAGS)
 WFLAGS		=	-Wall -Werror -Wextra
 MEM_FLAGS	=	-g3 -fsanitize=address
 
@@ -54,6 +54,9 @@ $(NAME):	libft $(OBJS)
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 				@$(DMK) $(OBJ_DIR)
 				@$(CC) -c  $(INCLUDES) $< -o $@ $(FLAGS)
+
+bonus:	${NAME}
+
 clean:
 	@$(MK_LFT) clean
 	$(RM) $(OBJ_DIR)
@@ -64,4 +67,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all libft clean fclean re
+.PHONY: all libft clean fclean re bonus

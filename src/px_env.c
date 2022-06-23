@@ -6,7 +6,7 @@
 /*   By: krozis <krozis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:36:46 by krozis            #+#    #+#             */
-/*   Updated: 2022/06/21 18:51:09 by krozis           ###   ########.fr       */
+/*   Updated: 2022/06/23 15:17:21 by krozis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,16 @@ char	*px_get_cmd(char *cmd, t_px *px)
 	char	**env_tab;
 	char	*full;
 
+	env_tab = NULL;
+	full = NULL;
 	if (access(cmd, F_OK | X_OK) == CAN_ACCESS)
 		return (ft_strdup(cmd));
 	env_tab = px_env_tab(px->envp);
 	if (env_tab == NULL)
-		px_exit(px_msg("error with env paths", "", "", EXIT_FAILURE), px);
+		return (NULL);
 	full = px_get_full_path(cmd, env_tab);
-	if (full == NULL)
-		px_exit(px_msg("command not found", ": ", px->av[px->child + 2],
-				EXIT_FAILURE), px);
 	px_free(NULL, env_tab);
+	if (full == NULL)
+		px_msg("command not found", ": ", px->av[px->child + 2], EXIT_FAILURE);
 	return (full);
 }

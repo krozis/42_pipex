@@ -6,7 +6,7 @@
 /*   By: krozis <krozis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:51:55 by krozis            #+#    #+#             */
-/*   Updated: 2022/06/21 15:24:02 by krozis           ###   ########.fr       */
+/*   Updated: 2022/06/23 15:43:46 by krozis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,18 @@ int	px_exit(int exit_code, t_px *px)
 	if (px != NULL)
 		px_close(px);
 	if (px->pids != NULL)
+	{
 		free(px->pids);
+		px->pids = NULL;
+	}
 	if (px->pipe != NULL)
+	{
 		free(px->pipe);
-	px_free(px->cmd, px->options);
+		px->pipe = NULL;
+	}
+	if (px->cmd != NULL)
+		px_free (px->cmd, NULL);
+	if (px->options != NULL)
+		px_free(NULL, px->options);
 	exit(exit_code);
 }
